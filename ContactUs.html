@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact Us</title>
+	<meta name="generator" content="BBEdit 11.1" />
+	<link rel="stylesheet" href="TicTackToe.css">
+</head>
+<body>
+	<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+	<form class="cmxform" id="commentForm" method="get" action="form-hander.html">
+	<fieldset>
+		<legend>Comment Form</legend>
+		<p>
+			<label for="cname">Name <span>(requires at least 2 letters) </span></label>
+			<input id="cname" name="name" minlength="2" type="text" required/>
+		</p>
+		<p>
+			<label for="cemail">E-mail <span> (required, will not be published)</span></label>
+			<input id="cemail" type="email" name="email" required/>
+		</p>
+		<p>
+			<label for="ctext" required>Comment <span>(required)</span></label>
+			<textarea id="ctext" name="comment" required></textarea>
+		</p>
+		<p>
+			<input class="submit" type="submit" value="Submit"/>
+		</p>
+	</fieldset>
+	</form>
+	<script>
+		$("commentForm").validate();
+	</script>
+</body>
+</html>
