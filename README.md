@@ -1,4 +1,4 @@
-# CIS411_Homework2
+# CIS411_Homework02
 A simple tic-tac-toe website. 
 
 Instruction for homework can be found here:
