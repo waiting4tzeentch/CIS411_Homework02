@@ -23,6 +23,7 @@ body table td {
   height: 50px;
   border: 1px solid #555;
   cursor: pointer;
+  text-align: center;
 }
 body table td:before {
   font-size: 1.5em;
