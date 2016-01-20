@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact Us</title>
+	<meta name="generator" content="BBEdit 11.1" />
+	<link rel="stylesheet" href="TicTackToe.css">
+</head>
+<body>
+	<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+	<form class="cmxform" id="regForm" method="get" action="form-hander.html">
+	<fieldset>
+		<legend>Registration Form</legend>
+		<p>
+			<label for="username">Username <span>(requires at least 6 letters or numbers)</span></label>
+			<input type="text" id="username" name="username" minlength="6"/>
+		</p>
+		<p>
+			<label for="rname">Legal Name <span>(requires at least 2 letters) </span></label>
+			<input id="rname" name="name" minlength="2" type="text" required/>
+		</p>
+		<p>
+			<label for="remail">E-mail <span>(required, will not be published)</span></label>
+			<input id="remail" type="email" name="email" required/>
+		</p>
+		<p>
+			<label for="password" required>Password <span>(requires at least 8 letters)</span></label>
+			<input id="password" type="password" name="password" minlength="2" required/>
+		</p>
+		<p>
+			<label for="cpassword">Confirm Password  <span>(required)</span></label>
+			<input type="password" name="cpassword" id="cpassword" required/>
+		</p>
+	</fieldset>
+	</form>
+	<script>
+		$("regForm").validate();
+	</script>
+</body>
+</html>
