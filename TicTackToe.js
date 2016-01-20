@@ -25,7 +25,7 @@ $(function() {
 		if(!state) {
 			// change box pattern to player's pattern
 			setState(td, playPattern);
-
+			messages.html ('');
 			// check win condition, if player won, display message
 			if (checkWinCondition(table, playPattern)) {
 				messages.html('Player '+playerTurn+' has won!');
@@ -33,6 +33,7 @@ $(function() {
 			}
 			// else set next player
 			else {
+				playPattern = setPlayPattern(playerTurn);
 				playerTurn = setNextPlayer(playerTurn);
 				getNextPlayer(turn, playerTurn);
 			}
@@ -44,9 +45,9 @@ $(function() {
 
 	$('.reset').click(function() {
 		playerTurn = 1;
-		messages.html ('');
+		playPattern = 'xValue';
+		messages.html('');
 		newGame(table);
-		getNextPlayer(turn, playerTurn);
 	}); // END: reset button click function
 
 }); // END: root function
@@ -73,6 +74,15 @@ function setState(td, pattern) {
 	return td.addClass(pattern);
 }
 
+function setPlayPattern (turn) {
+	if (turn == 1) {
+		return playPattern = 'oValue';
+		}
+	else if (turn == 2) {
+		return playPattern = 'xValue';
+		}
+}
+
 function getNextPlayer (turn, player) {
 	turn.html('Player turn: '+player);
 }
@@ -81,11 +91,9 @@ function getNextPlayer (turn, player) {
 function setNextPlayer(playerTurn) {
 	if (playerTurn == 1) {
 		return playerTurn = 2;
-		return playPattern = 'oValue';
 	}
 	else {
 		return playerTurn = 1;
-		return playPattern = 'xValue';
 	}
 }
 
